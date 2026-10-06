@@ -13,10 +13,10 @@ window.SITE = {
    "I’ve spent over ten years across identity, digital products and physical spaces, working with brands like LEGO, Shiseido and Google. Before frog I was at Jack Morton, BBH and Green Room Design, and co-founded a small studio called OCM."
   ],
   "preview": [
-   "showreel",
    "shiseido",
    "bricklink",
-   "home-kitchen"
+   "home-kitchen",
+   "showreel"
   ],
   "clipLength": 6000,
   "logos": [
@@ -62,12 +62,12 @@ window.SITE = {
  "about": {
   "awards": [
    {
-    "name": "D&AD Pencil",
+    "name": "D&AD Award",
     "year": "2022",
     "logo": "dandad"
    },
    {
-    "name": "D&AD New Blood Pencil",
+    "name": "D&AD New Blood Award",
     "year": "2019",
     "logo": "dandad"
    },
