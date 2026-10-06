@@ -772,17 +772,16 @@ const Sheet = (() => {
     close(true);
     scrim = document.createElement("div"); scrim.className = "scrim";
     el = document.createElement("aside"); el.className = "sheet"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Full portfolio");
-    const codes = S.profiles.length > 0;
     el.innerHTML = `${top("Full portfolio")}
-      ${codes ? `<form id="code" novalidate>
+      <form id="code" novalidate>
         <h2>The full portfolio is private.</h2>
         <p class="lede">${esc(S.landing.requestIntro)}</p>
         <div class="field"><label for="c-code">Access code</label><input id="c-code" class="codein" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
         <p class="err" aria-live="polite"></p>
         <button class="btn" type="submit">Open portfolio ${I.arrow}</button>
       </form>
-      <p class="or">No code yet? <button class="chip" id="askbtn" aria-expanded="false" aria-controls="reqwrap">Ask for one</button></p>` : `<h2>The full portfolio is private.</h2><p class="lede">${esc(S.landing.requestPublic || "Leave your details and I’ll send you a link.")}</p>`}
-      <div class="reqform${codes ? "" : " on"}" id="reqwrap"><div>
+      <p class="or">No code yet? <button class="chip" id="askbtn" aria-expanded="false" aria-controls="reqwrap">Ask for one</button></p>
+      <div class="reqform" id="reqwrap"><div>
         <form id="req" novalidate>
           <div class="field"><label for="r-name">Your name</label><input id="r-name" name="name" autocomplete="name" required></div>
           <div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required></div>
@@ -796,10 +795,10 @@ const Sheet = (() => {
     requestAnimationFrame(() => { scrim.classList.add("on"); el.classList.add("on") });
     scrim.onclick = () => close(); el.addEventListener("click", e => { if (e.target.closest("[data-x]")) close() });
     document.addEventListener("keydown", esc_);
-    setTimeout(() => { const f = $("#c-code", el) || $("#r-name", el); f && f.focus({ preventScroll: true }) }, 420);
+    setTimeout(() => { const f = $("#c-code", el); f && f.focus({ preventScroll: true }) }, 420);
     const ask = $("#askbtn", el), wrap = $("#reqwrap", el);
-    if (ask) ask.onclick = () => { const on = !wrap.classList.contains("on"); wrap.classList.toggle("on", on); ask.setAttribute("aria-expanded", on); if (on) setTimeout(() => $("#r-name", el).focus({ preventScroll: false }), 350) };
-    if (codes) bindCode(); bindRequest();
+    ask.onclick = () => { const on = !wrap.classList.contains("on"); wrap.classList.toggle("on", on); ask.setAttribute("aria-expanded", on); if (on) setTimeout(() => $("#r-name", el).focus({ preventScroll: false }), 350) };
+    bindCode(); bindRequest();
   }
   const esc_ = e => { if (e.key === "Escape") close() };
   function bindCode() {

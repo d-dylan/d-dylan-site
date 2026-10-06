@@ -33,7 +33,8 @@ window.SITE = {
    "ericsson",
    "unity"
   ],
-  "clientsLabel": "Clients I’ve worked with"
+  "clientsLabel": "Clients I’ve worked with",
+  "requestIntro": "Enter your access code. If you don’t have one yet, ask below and I’ll send you a link."
  },
  "projects": [
   {
