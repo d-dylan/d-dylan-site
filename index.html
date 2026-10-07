@@ -143,6 +143,7 @@ svg.i{width:15px;height:15px;flex:none}
 .note .rushline svg{width:.7em;height:.7em;vertical-align:baseline;margin-left:.25em;transition:transform .4s var(--spring)}
 .note .rushline:hover{color:var(--ink)} .note .rushline:hover svg{transform:translateX(4px)}
 .about .me{cursor:default}
+a.plain,a.plain:hover,a.plain:focus{color:inherit;text-decoration:none;opacity:1;transition:none}
 .peek.tall{width:220px;aspect-ratio:4/5}
 .note .prep{font-size:var(--fs-s);color:var(--muted);display:flex;flex-direction:column;gap:3px}
 .workhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:clamp(90px,13vw,180px) 0 16px}
@@ -498,7 +499,7 @@ function viewHome() {
   const logos = (L.logos || []).filter(k => LOGOS[k]);
   app.innerHTML = `<header class="pubhead">
     <div class="txt">
-      <p><span class="nm">${esc(S.settings.name)}</span> ${fmt(L.lead, true)}</p>
+      <p><span class="nm">${esc(S.settings.name)}</span> ${fmt(L.lead, true).replace(/\bfrog\b/, `<a class="plain" href="https://www.frog.co" target="_blank" rel="noopener">frog</a>`)}</p>
       ${(L.more || []).map(p => `<p class="sub">${fmt(p)}</p>`).join("")}
       <div class="meta">
         <button class="tg" data-drop="clients" aria-expanded="false" aria-controls="clients">${esc(L.clientsLabel || "Clients")} ${I.plus}</button>
