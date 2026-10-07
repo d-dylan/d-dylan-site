@@ -8,9 +8,9 @@ window.SITE = {
   "formEndpoint": ""
  },
  "landing": {
-  "lead": "is a design director currently working at frog. I help shape how people see, feel and use brands.",
+  "lead": "is a design director currently working at frog.",
   "more": [
-   "I’ve spent over ten years across identity, digital products and physical spaces, working with brands like LEGO, Shiseido and Google. Before frog I was at Jack Morton, BBH and Green Room Design, and co-founded a small studio called OCM."
+   "I help shape how people see, feel and use brands. I’ve spent over ten years across identity, digital products and physical spaces, working with brands like LEGO, Shiseido and Google. Before frog I was at Jack Morton, BBH and Green Room Design, and co-founded a small studio called OCM."
   ],
   "preview": [
    "shiseido",
